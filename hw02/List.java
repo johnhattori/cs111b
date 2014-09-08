@@ -26,23 +26,48 @@ class List
 
     public static void main(String args[])
    {
-        File f = new File(args[0]);
-        
-        if (!f.exists()) die("file does not exist");
-        if (f.isDirectory()) die("is a directory");
-        if (!f.isFile()) die("file  irregular");
-        if (!f.canRead()) die("file not readable.");     
-                
-        try
-        {
-             String line;
-             Scanner sc = new Scanner(f);
-             while(sc.hasNext())
-             {
-                  line = sc.nextLine();
-                  System.out.println(line);
-             }
-        }catch(FileNotFoundException e){}
 
+        if (args[0].equals( "-n" ))
+        {
+            File f = new File(args[1]);
+            
+            if (!f.exists()) die("file does not exist");
+            if (f.isDirectory()) die("is a directory");
+            if (!f.isFile()) die("file  irregular");
+            if (!f.canRead()) die("file not readable.");     
+                    
+            try
+            {
+                String line;
+                Scanner sc = new Scanner(f);
+                int lineNum = 1;    
+                while(sc.hasNext())
+                {
+                    line = sc.nextLine();
+                    System.out.println(lineNum + ") " + line);
+                    lineNum++;
+                }
+            }catch(FileNotFoundException e){}
+        }
+        else 
+        {
+            File f = new File(args[0]);
+            
+            if (!f.exists()) die("file does not exist");
+            if (f.isDirectory()) die("is a directory");
+            if (!f.isFile()) die("file  irregular");
+            if (!f.canRead()) die("file not readable.");     
+                    
+            try
+            {
+                 String line;
+                 Scanner sc = new Scanner(f);
+                 while(sc.hasNext())
+                 {
+                      line = sc.nextLine();
+                      System.out.println(line);
+                 }
+            }catch(FileNotFoundException e){}
+        }
    }
 }
