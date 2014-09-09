@@ -5,7 +5,7 @@
  Program Name: List.java
  Objective: This program will display the contents of a file
             entered as a command line argument. If option -n
-            is arg[0] the program will display the line number.
+            is given the program will display the line number.
             This program assumes that the last argument given
             is the file to be read.
  
@@ -17,25 +17,23 @@ import java.util.*;
 import java.io.*;
 //import javax.swing.*;
  
-class List
+public class List
 {
-
+//***************** die() ********************
     public static void die(String msg)
     {
         System.err.println(msg);
         System.exit(1);
     }
-
+//****************** main() ******************
     public static void main(String args[])
     {
-
-        boolean printLineNum = false;
-
         if(args.length == 0)
         {
             die("You must enter a file name as an argument.");
         } 
 
+        boolean printLineNum = false;
         for(int i = 0; i < args.length - 1; i++)
         {
             if(args[i].equals("-n"))
