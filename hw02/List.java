@@ -6,6 +6,8 @@
  Objective: This program will display the contents of a file
             entered as a command line argument. If option -n
             is arg[0] the program will display the line number.
+            This program assumes that the last argument given
+            is the file to be read.
  
 */
  
@@ -17,57 +19,57 @@ import java.io.*;
  
 class List
 {
-   
+
     public static void die(String msg)
     {
-         System.err.println(msg);
-         System.exit(1);
+        System.err.println(msg);
+        System.exit(1);
     }
 
     public static void main(String args[])
-   {
+    {
 
-        if (args[0].equals( "-n" ))
+        boolean printLineNum = false;
+
+        if(args.length == 0)
         {
-            File f = new File(args[1]);
-            
-            if (!f.exists()) die("file does not exist");
-            if (f.isDirectory()) die("is a directory");
-            if (!f.isFile()) die("file  irregular");
-            if (!f.canRead()) die("file not readable.");     
-                    
-            try
+            die("You must enter a file name as an argument.");
+        } 
+
+        for(int i = 0; i < args.length - 1; i++)
+        {
+            if(args[i].equals("-n"))
+            {    
+                printLineNum = true;
+            } else 
             {
-                String line;
-                Scanner sc = new Scanner(f);
-                int lineNum = 1;    
-                while(sc.hasNext())
+                die("Unknown argument option " + args[i]);
+            }
+        }    
+
+        File f = new File(args[args.length - 1]);
+
+        if (!f.exists()) die("file does not exist");
+        if (f.isDirectory()) die("is a directory");
+        if (!f.isFile()) die("file  irregular");
+        if (!f.canRead()) die("file not readable.");     
+
+        try
+        {
+            String line;
+            Scanner sc = new Scanner(f);
+            int lineNum = 1;    
+            while(sc.hasNext())
+            {
+                line = sc.nextLine();
+                if(true == printLineNum)
                 {
-                    line = sc.nextLine();
-                    System.out.println(lineNum + ") " + line);
+                    System.out.print(lineNum + ") ");
                     lineNum++;
                 }
-            }catch(FileNotFoundException e){}
-        }
-        else 
-        {
-            File f = new File(args[0]);
-            
-            if (!f.exists()) die("file does not exist");
-            if (f.isDirectory()) die("is a directory");
-            if (!f.isFile()) die("file  irregular");
-            if (!f.canRead()) die("file not readable.");     
-                    
-            try
-            {
-                 String line;
-                 Scanner sc = new Scanner(f);
-                 while(sc.hasNext())
-                 {
-                      line = sc.nextLine();
-                      System.out.println(line);
-                 }
-            }catch(FileNotFoundException e){}
-        }
-   }
+                
+                System.out.println(line);
+            }
+        }catch(FileNotFoundException e){}
+    }
 }
