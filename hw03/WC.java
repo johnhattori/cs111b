@@ -20,6 +20,7 @@ import java.io.*;
  
 public class WC
 {
+
 //******************* die() *************************
     
     public static void die(String msg)
@@ -100,8 +101,8 @@ public class WC
         
         }catch(FileNotFoundException e) {System.out.println("File not found.");}
     }
-//*************** wordCount() *********************
 
+//*************** wordCount() *********************
 
     public static void wordCount(File wf)
     {
@@ -121,6 +122,7 @@ public class WC
         
         }catch(FileNotFoundException e) {System.out.println("File not found.");}
     }
+
 //*************** lineCount() *********************        
     
     public static void lineCount(File lf)
