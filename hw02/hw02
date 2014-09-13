@@ -1,0 +1,41 @@
+Script started on Mon Sep  8 23:02:03 2014
+[?1034hbash-3.2$ 
+bash-3.2$ 
+bash-3.2$ java List
+You must enter a file name as an argument.
+bash-3.2$ 
+bash-3.2$ java List -x love_song 
+Unknown argument option -x
+bash-3.2$ java List .
+is a directory
+bash-3.2$ java List love_song 
+LET us go then, you and I,  
+When the evening is spread out against the sky  
+Like a patient etherized upon a table;  
+Let us go, through certain half-deserted streets,   
+The muttering retreats          5
+Of restless nights in one-night cheap hotels    
+And sawdust restaurants with oyster-shells: 
+Streets that follow like a tedious argument 
+Of insidious intent 
+To lead you to an overwhelming question….           10
+Oh, do not ask, “What is it?”   
+Let us go and make our visit.   
+bash-3.2$ 
+bash-3.2$ java List -n love_song 
+1) LET us go then, you and I,  
+2) When the evening is spread out against the sky  
+3) Like a patient etherized upon a table;  
+4) Let us go, through certain half-deserted streets,   
+5) The muttering retreats          5
+6) Of restless nights in one-night cheap hotels    
+7) And sawdust restaurants with oyster-shells: 
+8) Streets that follow like a tedious argument 
+9) Of insidious intent 
+10) To lead you to an overwhelming question….           10
+11) Oh, do not ask, “What is it?”   
+12) Let us go and make our visit.   
+bash-3.2$ exit
+exit
+
+Script done on Mon Sep  8 23:03:31 2014
