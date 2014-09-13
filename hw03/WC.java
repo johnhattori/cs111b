@@ -7,8 +7,8 @@
             argurment, WC counts the number of characters in the file passed in.
             When -w, words are counted; and when -l, lines are counted. If just
             a file is passed in, then characer, word and line count returned. 
-            This program assumes that the last argument passed in is the file to be read.
-            (note: This program only deals with ascii text files.)
+            This program assumes that the last argument passed in is a file.
+            (note: This program only deals with ascii files.)
  
 */
  
@@ -55,6 +55,7 @@ public class WC
         boolean doCharCount = false;
         boolean doWordCount = false;
         boolean doLineCount = false;
+
         for(int i = 0; i < args.length - 1; i++)
         {
             if(args[i].equals("-c"))
@@ -74,6 +75,7 @@ public class WC
                 die("Unknown argument option " + args[i]);
             }
         }
+        
         if(true == doLineCount) lineCount(rf); 
         if(true == doWordCount) wordCount(rf);
         if(true == doCharCount) charCount(rf);
