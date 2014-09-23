@@ -62,6 +62,7 @@ public class Wipe
             }
         }
     }    
+
 //*************** trash() *********************
 
     public static void trash(String fileName)
