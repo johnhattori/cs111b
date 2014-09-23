@@ -1,0 +1,14 @@
+Script started on Thu Sep 18 22:02:23 2014
+[?1034hbash-3.2$ java WC lava
+The number of lines: 8
+Number of words: 100
+Number of characters: 595
+bash-3.2$ java WC -l lava
+The number of lines: 8
+bash-3.2$ java WC -l lava[1P lavaw lava
+Number of words: 100
+bash-3.2$ java WC -w lava[1P lavac lava
+Number of characters: 595
+bash-3.2$ exit
+
+Script done on Thu Sep 18 22:03:14 2014
