@@ -88,6 +88,7 @@ public class Wipe
             }
             writer.println("");            
             writer.close();
+            rf.delete();
  
         }catch(FileNotFoundException e) {System.out.println("File not found.");}
     }
